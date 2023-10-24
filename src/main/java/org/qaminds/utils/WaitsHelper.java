@@ -1,2 +1,4 @@
-package org.qaminds.utils;public class WaitsHelper {
+package org.qaminds.utils;
+
+public class WaitsHelper {
 }

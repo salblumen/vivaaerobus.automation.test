@@ -1,2 +1,4 @@
-package org.qaminds.utils;public class Screenshot {
+package org.qaminds.utils;
+
+public class Screenshot {
 }
