@@ -19,11 +19,16 @@ public class HomePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-    @FindBy(id="flight-search-origin")
+    @FindBy(css="app-flight-input > form > div > div:nth-child(1)")
     private WebElement inputOrigin;
+    @FindBy(css="app-flight-input > form > div > div:nth-child(1) input")
+    private WebElement inputOrigin2;
 
-    @FindBy(id="flight-search-destination")
+
+    @FindBy(css="div.input-section.secondary-section")
     private WebElement inputDestination;
+    @FindBy(css="div.input-section.secondary-section input")
+    private WebElement inputDestination2;
 
     @FindBy(css = "div.promo-modal-header.bg-image.light > button")
     private WebElement initialPopUp;
@@ -38,18 +43,18 @@ public class HomePage {
     }
 
     public void insertOriginName(String origin){
-        wait.until(ExpectedConditions.visibilityOf(inputOrigin));
+        wait.until(ExpectedConditions.elementToBeClickable(inputOrigin));
         inputOrigin.click();
-        inputOrigin.sendKeys(origin);
-        inputOrigin.sendKeys(Keys.ENTER);
+        inputOrigin2.sendKeys(origin);
+        inputOrigin2.sendKeys(Keys.ENTER);
     }
 
 
     public void insertDestinationName(String destination){
-        wait.until(ExpectedConditions.visibilityOf(inputDestination));
+        wait.until(ExpectedConditions.elementToBeClickable(inputDestination));
         inputDestination.click();
-        inputDestination.sendKeys(destination);
-        inputDestination.sendKeys(Keys.ENTER);
+        inputDestination2.sendKeys(destination);
+        inputDestination2.sendKeys(Keys.ENTER);
 
     }
 
