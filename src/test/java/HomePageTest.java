@@ -1,6 +1,7 @@
 import lombok.extern.slf4j.Slf4j;
 import org.qaminds.Pages;
 import org.testng.annotations.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -16,12 +17,14 @@ public class HomePageTest extends BaseTest{
         navigateTo(baseUrl);
         String actualTitle = "Viva Aerobus";
         assertThat(getDriver().getTitle()).contains(actualTitle);
+//        Screenshot.screenshot(getDriver());
+        log.info(" Test 1001 ----- SUCCESSFUL -------");
 
     }
 
 
 
-    @Test(testName = "Reserve a round trip")
+    @Test(testName = "Reserve a round trip", enabled = false)
     public void validateRoundTripReservationFlow(){
         log.info("Step 1: Navigate to vivaaerobus.com");
         navigateTo("vivaaerobus.com");

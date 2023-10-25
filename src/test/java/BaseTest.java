@@ -14,8 +14,9 @@ public class BaseTest {
 @BeforeMethod
 public void beforeMethod(){
     log.info("------------ Start Test {} --------------");
-    WebDriverManager.chromedriver().setup();
-    driver = new ChromeDriver();
+
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
 
     driver.manage().window().maximize();
 
@@ -28,6 +29,7 @@ public void AfterMethod(){
 
 public void navigateTo(String _url){
     String url = String.format("http://%s",_url);
+    log.info("Opening {} website...", url);
     getDriver().get(url);
 }
 
