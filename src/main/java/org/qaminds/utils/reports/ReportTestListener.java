@@ -1,24 +1,27 @@
-package org.qaminds.utils;
+package org.qaminds.utils.reports;
 
 import lombok.extern.slf4j.Slf4j;
+import org.qaminds.utils.ScreenshotHelpers;
+import org.qaminds.utils.WebDriverConfiguration;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+/**
+ * Clase que nos permite implementar la funcionalidad extendida con ITestListener
+ */
 @Slf4j
-public class TestListener implements ITestListener {
-
-
+public class ReportTestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
         log.info("------------ Start Test {} --------------", result.getName());
     }
 
-    @Override
+
     public void onTestFailure(ITestResult result) {
         log.error("---------   Failed Test : {}  ------------", result.getName());
-        log.error("{}",ScreenshotHelpers.screenshot(WebDriverConfiguration.getDriver()));
+        ScreenshotHelpers.getScreenshot(WebDriverConfiguration.getDriver());
     }
 
     @Override
@@ -29,7 +32,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-    log.info(" ---------- End Test: {} ---------- ", context.getName());
+        log.info(" ---------- End Execution: {} ---------- ", context.getName());
     }
 }
 

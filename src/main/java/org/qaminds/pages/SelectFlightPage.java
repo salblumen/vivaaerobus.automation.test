@@ -1,4 +1,4 @@
-package org.qaminds;
+package org.qaminds.pages;
 
 public class SelectFlightPage {
 }
