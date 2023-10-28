@@ -8,7 +8,7 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
-            <class name="org.qaminds.tests.HomePageTest"/>
+            <class name="org.qaminds.tests.home.HomePageTest"/>
         </classes>
 
     </test>
